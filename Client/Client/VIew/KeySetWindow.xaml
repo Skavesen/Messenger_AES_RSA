@@ -1,0 +1,149 @@
+﻿<Window x:Class="Client.KeySetWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:local="clr-namespace:Client"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="Установка ключа" Height="240" Width="810" ResizeMode="NoResize" Icon="\Resources\ChatIcon.ico">
+
+    <Window.Resources>
+
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="20" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Настроить фон по-умолчанию  -->
+                            <!--<Trigger Property="IsEnabled" Value="true">  
+                                <Setter Property="Background" Value="Red"/>
+                                <Setter Property="BorderBrush" Value="Red"/>
+                            </Trigger>-->
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="#00BFFF"/>
+                                <Setter Property="BorderBrush" Value="#00BFFF"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" Value="#87CEFA"/>
+                                <Setter Property="BorderBrush" Value="#87CEFA"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+
+        <TabControl>
+
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="10" Width="10" Fill="Black" />
+                        <TextBlock Margin="3">Симметричный ключ</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+
+                <TabItem.Content>
+                    <Grid Background="Beige">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,30,0,0" 
+                        Text="Указывайте цифры от 0 до 255 для установления приватного ключа с" 
+                        FontSize="15"/>
+
+                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="645,30,0,0" FontSize="15" FontWeight="Bold"
+                                   Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <syncfusion:SfMaskedEdit  
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Top"
+                         Width="715"
+                         FontSize="12"
+                         Margin="0,60,0,0"
+                         MaskType = "Simple"
+                         Mask="000/000/000/000/000/000/000/000/000/000/000/000/000/000/000/000/000/000/000/000/000/000/000/000/000/000/000/000/000/000/000/000"
+                         Value="{Binding Current_Simmetric_Key_Str, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                         />
+
+                        <Canvas>
+                            <Button Style="{DynamicResource ButtonStyle1}" Content="Сгенерировать ключ" Canvas.Top="105" Canvas.Left="130" 
+                                    Command="{Binding GenerateSymmetricCommand}"/>
+                            <Button Style="{DynamicResource ButtonStyle1}" Content="Установить ключ" Canvas.Top="105" Canvas.Left="310" 
+                                    Command="{Binding SetSymmetricCommand}" />
+                            <Button Style="{DynamicResource ButtonStyle1}" Content="Удалить ключ"  Canvas.Top="105" Canvas.Left="490" 
+                                    Command="{Binding DelSymmetricCommand}" />
+                            <Button Canvas.Top="105" Canvas.Left="720" Height="40" Width="30" 
+                                    Command="{Binding CopySymmetricCommand}" >
+                                <Image Source="/Resources/Clipboard.png"/>
+                            </Button>
+                        </Canvas>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Height="10" Width="10" Fill="Black" />
+                        <TextBlock Margin="3">Асимметричный ключ</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+
+                <TabItem.Content>
+                    <Canvas Background="Beige">
+                        <TextBlock Canvas.Top="5" Canvas.Left="10" Text="Мой публичный ключ:" FontSize="12" />
+                        <TextBox  Canvas.Top="31" Canvas.Left="10" Width="350" IsReadOnly="True"
+                                  Text="{Binding Current_Asimmetric_Key_Str, UpdateSourceTrigger=PropertyChanged}" />
+                        <Button Canvas.Top="20" Canvas.Left="370" Height="40" Width="30" 
+                                Command="{Binding CopyAsymmetricCommand}">
+                            <Image Source="/Resources/Clipboard.png"/>
+                        </Button>
+
+                        <TextBlock Canvas.Top="5" Canvas.Left="427" Text="Публичный ключ" FontSize="12" />
+                        <TextBlock Canvas.Top="5" Canvas.Left="525" FontSize="12" FontWeight="Black"
+                                   Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <TextBox Canvas.Top="31" Canvas.Right="10"  Width="350"
+                                  Text="{Binding UserNameAsymm_Str, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <TextBlock Canvas.Top="65" Canvas.Left="10" Text="Чем больше длина, тем больше требуется вычислительных ресурсов"/>
+                        <TextBlock Canvas.Top="86" Canvas.Left="10" Text="Длина ключа (бит)"/>
+                        <ComboBox Width="60" Canvas.Left="121" Canvas.Top="86"
+                                  IsSynchronizedWithCurrentItem="True"
+                                  SelectedIndex="{Binding AsimmKeySize, UpdateSourceTrigger=PropertyChanged}">
+                            <ComboBoxItem Content="2048"/>
+                            <ComboBoxItem Content="3072"/>
+                            <ComboBoxItem Content="4096"/>
+                            <ComboBoxItem Content="5120"/>
+                            <ComboBoxItem Content="6016"/>
+                        </ComboBox>
+
+                        <Button Style="{DynamicResource ButtonStyle1}" Content="Сгенерировать ключ" Canvas.Top="120" Canvas.Left="50" 
+                              Command="{Binding GenerateAsymmetricCommand}" />
+                        <Button Style="{DynamicResource ButtonStyle1}" Content="Установить ключ" Canvas.Top="120" Canvas.Left="230"
+                               Command="{Binding SetAsymmetricCommand}" />
+                        <Button Style="{DynamicResource ButtonStyle1}" Content="Удалить ключ"  Canvas.Top="120" Canvas.Left="410"
+                                Command="{Binding DelAsymmetricCommand}" />
+                        <Button Style="{DynamicResource ButtonStyle1}" Content="Отправить ключ"  Canvas.Top="120" Canvas.Left="590"
+                                Command="{Binding SendAsymmetricCommand}" ToolTip="Перед отправкой не забудьте установить ключ для себя" />
+                        
+                    </Canvas>
+                </TabItem.Content>
+
+            </TabItem>
+
+        </TabControl>
+
+    </Grid>
+</Window>

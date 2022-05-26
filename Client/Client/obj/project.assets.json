@@ -1,0 +1,288 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v5.0,Profile=windows": {
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.37": {
+        "type": "package"
+      },
+      "Syncfusion.Licensing/19.3.0.45": {
+        "type": "package"
+      },
+      "Syncfusion.SfInput.WPF/19.3.0.45": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "19.3.0.45",
+          "Syncfusion.Shared.WPF": "19.3.0.45"
+        }
+      },
+      "Syncfusion.Shared.WPF/19.3.0.45": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "19.3.0.45"
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.37": {
+      "sha512": "TxH7g5I/4UzOHfs0GqD1W4evdl7DIHOQCr/KWc4G4BkgtsAhaHHXAW5JbKrkB7cqClN0JYOX6j9/4v4emCjFIA==",
+      "type": "package",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.37",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Design/Microsoft.Xaml.Behaviors.Design.dll",
+        "lib/net45/Microsoft.Xaml.Behaviors.dll",
+        "lib/net45/Microsoft.Xaml.Behaviors.pdb",
+        "lib/net45/Microsoft.Xaml.Behaviors.xml",
+        "lib/net5.0-windows7.0/Design/Microsoft.Xaml.Behaviors.DesignTools.dll",
+        "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll",
+        "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.pdb",
+        "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.xml",
+        "lib/netcoreapp3.1/Design/Microsoft.Xaml.Behaviors.DesignTools.dll",
+        "lib/netcoreapp3.1/Microsoft.Xaml.Behaviors.dll",
+        "lib/netcoreapp3.1/Microsoft.Xaml.Behaviors.pdb",
+        "lib/netcoreapp3.1/Microsoft.Xaml.Behaviors.xml",
+        "microsoft.xaml.behaviors.wpf.1.1.37.nupkg.sha512",
+        "microsoft.xaml.behaviors.wpf.nuspec",
+        "tools/Install.ps1"
+      ]
+    },
+    "Syncfusion.Licensing/19.3.0.45": {
+      "sha512": "1xmsNi9yyUeB71H/hFix5kewNJ+VQp7kRZtV9vlLb6cMpHv5AfTWm3Mm7G+D1pY5KyNlNm8LJbgSjPgSARVD0A==",
+      "type": "package",
+      "path": "syncfusion.licensing/19.3.0.45",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/MonoAndroid10.0/Syncfusion.Licensing.dll",
+        "lib/MonoAndroid90/Syncfusion.Licensing.dll",
+        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
+        "lib/net20/Syncfusion.Licensing.dll",
+        "lib/net35/Syncfusion.Licensing.dll",
+        "lib/net40/Syncfusion.Licensing.dll",
+        "lib/net45/Syncfusion.Licensing.dll",
+        "lib/net451/Syncfusion.Licensing.dll",
+        "lib/net46/Syncfusion.Licensing.dll",
+        "lib/net5.0-windows10.0/Syncfusion.Licensing.dll",
+        "lib/net5.0/Syncfusion.Licensing.dll",
+        "lib/netcoreapp3.1/Syncfusion.Licensing.dll",
+        "lib/netstandard1.0/Syncfusion.Licensing.dll",
+        "lib/netstandard1.2/Syncfusion.Licensing.dll",
+        "lib/netstandard1.4/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.19.3.0.45.nupkg.sha512",
+        "syncfusion.licensing.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.SfInput.WPF/19.3.0.45": {
+      "sha512": "HBZnw2J0q22bZiri2a5L0Xf+88axV9Rq0KhwN7QmA4hhafHUSV9vtCRUHbtmxtYFekrAF4BdLqnbG7qbiYcSzQ==",
+      "type": "package",
+      "path": "syncfusion.sfinput.wpf/19.3.0.45",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net40/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net40/Design/Syncfusion.SfInput.WPF.DesignTools.dll",
+        "lib/net40/Design/Syncfusion.SfInput.WPF.Expression.Design.dll",
+        "lib/net40/Design/Syncfusion.SfInput.Wpf.VisualStudio.Design.dll",
+        "lib/net40/Syncfusion.SfInput.WPF.dll",
+        "lib/net40/Syncfusion.SfInput.WPF.xml",
+        "lib/net45/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net45/Design/Syncfusion.SfInput.WPF.DesignTools.dll",
+        "lib/net45/Design/Syncfusion.SfInput.WPF.Expression.Design.dll",
+        "lib/net45/Design/Syncfusion.SfInput.Wpf.VisualStudio.Design.dll",
+        "lib/net45/Syncfusion.SfInput.WPF.dll",
+        "lib/net45/Syncfusion.SfInput.WPF.xml",
+        "lib/net451/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net451/Design/Syncfusion.SfInput.WPF.DesignTools.dll",
+        "lib/net451/Design/Syncfusion.SfInput.WPF.Expression.Design.dll",
+        "lib/net451/Design/Syncfusion.SfInput.Wpf.VisualStudio.Design.dll",
+        "lib/net451/Syncfusion.SfInput.WPF.dll",
+        "lib/net451/Syncfusion.SfInput.WPF.xml",
+        "lib/net46/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net46/Design/Syncfusion.SfInput.WPF.DesignTools.dll",
+        "lib/net46/Design/Syncfusion.SfInput.WPF.Expression.Design.dll",
+        "lib/net46/Design/Syncfusion.SfInput.Wpf.VisualStudio.Design.dll",
+        "lib/net46/Syncfusion.SfInput.WPF.dll",
+        "lib/net46/Syncfusion.SfInput.WPF.xml",
+        "lib/net5.0-windows7.0/Design/Syncfusion.SfInput.WPF.DesignTools.dll",
+        "lib/net5.0-windows7.0/Syncfusion.SfInput.WPF.dll",
+        "lib/net5.0-windows7.0/Syncfusion.SfInput.WPF.xml",
+        "lib/netcoreapp3.1/Design/Syncfusion.SfInput.WPF.DesignTools.dll",
+        "lib/netcoreapp3.1/Syncfusion.SfInput.WPF.dll",
+        "lib/netcoreapp3.1/Syncfusion.SfInput.WPF.xml",
+        "syncfusion.sfinput.wpf.19.3.0.45.nupkg.sha512",
+        "syncfusion.sfinput.wpf.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Shared.WPF/19.3.0.45": {
+      "sha512": "v83kcd+TMmcltawVbpnl/EYubYbc20jyd3zxdfONcMiVqcxr/9PHlny4J0SiPfZ7++wlL2Qcl+xYfHLnRG6nRA==",
+      "type": "package",
+      "path": "syncfusion.shared.wpf/19.3.0.45",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net35/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net35/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net35/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net35/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net35/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net35/Syncfusion.Shared.WPF.dll",
+        "lib/net35/Syncfusion.Shared.WPF.xml",
+        "lib/net40/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net40/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net40/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net40/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net40/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net40/Syncfusion.Shared.WPF.dll",
+        "lib/net40/Syncfusion.Shared.WPF.xml",
+        "lib/net45/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net45/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net45/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net45/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net45/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net45/Syncfusion.Shared.WPF.dll",
+        "lib/net45/Syncfusion.Shared.WPF.xml",
+        "lib/net451/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net451/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net451/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net451/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net451/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net451/Syncfusion.Shared.WPF.dll",
+        "lib/net451/Syncfusion.Shared.WPF.xml",
+        "lib/net46/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net46/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net46/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net46/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net46/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net46/Syncfusion.Shared.WPF.dll",
+        "lib/net46/Syncfusion.Shared.WPF.xml",
+        "lib/net5.0-windows7.0/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Shared.WPF.dll",
+        "lib/net5.0-windows7.0/Syncfusion.Shared.WPF.xml",
+        "lib/netcoreapp3.1/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/netcoreapp3.1/Syncfusion.Shared.WPF.dll",
+        "lib/netcoreapp3.1/Syncfusion.Shared.WPF.xml",
+        "syncfusion.shared.wpf.19.3.0.45.nupkg.sha512",
+        "syncfusion.shared.wpf.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v5.0,Profile=windows": [
+      "Microsoft.Xaml.Behaviors.Wpf >= 1.1.37",
+      "Syncfusion.SfInput.WPF >= 19.3.0.45"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\PiyPiyKiller\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\PiyPiyKiller\\Desktop\\Баляба\\WPF-Chat-master\\Client\\Client\\Client.csproj",
+      "projectName": "Client",
+      "projectPath": "C:\\Users\\PiyPiyKiller\\Desktop\\Баляба\\WPF-Chat-master\\Client\\Client\\Client.csproj",
+      "packagesPath": "C:\\Users\\PiyPiyKiller\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PiyPiyKiller\\Desktop\\Баляба\\WPF-Chat-master\\Client\\Client\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\PiyPiyKiller\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net50-windows"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net50-windows": {
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net50-windows": {
+        "dependencies": {
+          "Microsoft.Xaml.Behaviors.Wpf": {
+            "target": "Package",
+            "version": "[1.1.37, )"
+          },
+          "Syncfusion.SfInput.WPF": {
+            "target": "Package",
+            "version": "[19.3.0.45, )"
+          }
+        }
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1202",
+      "level": "Error",
+      "message": "Пакет Microsoft.Xaml.Behaviors.Wpf 1.1.37 несовместим с net50-windows (.NETFramework,Version=v5.0,Profile=windows). Пакет Microsoft.Xaml.Behaviors.Wpf 1.1.37 поддерживает:\r\n  - net45 (.NETFramework,Version=v4.5)\r\n  - net50-windows7.0 (.NETFramework,Version=v5.0,Profile=windows7.0)\r\n  - netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
+      "libraryId": "Microsoft.Xaml.Behaviors.Wpf",
+      "targetGraphs": [
+        ".NETFramework,Version=v5.0,Profile=windows"
+      ]
+    },
+    {
+      "code": "NU1202",
+      "level": "Error",
+      "message": "Пакет Syncfusion.SfInput.WPF 19.3.0.45 несовместим с net50-windows (.NETFramework,Version=v5.0,Profile=windows). Пакет Syncfusion.SfInput.WPF 19.3.0.45 поддерживает:\r\n  - net40 (.NETFramework,Version=v4.0)\r\n  - net45 (.NETFramework,Version=v4.5)\r\n  - net451 (.NETFramework,Version=v4.5.1)\r\n  - net46 (.NETFramework,Version=v4.6)\r\n  - net50-windows7.0 (.NETFramework,Version=v5.0,Profile=windows7.0)\r\n  - netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
+      "libraryId": "Syncfusion.SfInput.WPF",
+      "targetGraphs": [
+        ".NETFramework,Version=v5.0,Profile=windows"
+      ]
+    },
+    {
+      "code": "NU1202",
+      "level": "Error",
+      "message": "Пакет Syncfusion.Licensing 19.3.0.45 несовместим с net50-windows (.NETFramework,Version=v5.0,Profile=windows). Пакет Syncfusion.Licensing 19.3.0.45 поддерживает:\r\n  - monoandroid10.0 (MonoAndroid,Version=v10.0)\r\n  - monoandroid90 (MonoAndroid,Version=v9.0)\r\n  - net20 (.NETFramework,Version=v2.0)\r\n  - net35 (.NETFramework,Version=v3.5)\r\n  - net40 (.NETFramework,Version=v4.0)\r\n  - net45 (.NETFramework,Version=v4.5)\r\n  - net451 (.NETFramework,Version=v4.5.1)\r\n  - net46 (.NETFramework,Version=v4.6)\r\n  - net50 (.NETFramework,Version=v5.0)\r\n  - net50-windows10.0 (.NETFramework,Version=v5.0,Profile=windows10.0)\r\n  - netcoreapp3.1 (.NETCoreApp,Version=v3.1)\r\n  - netstandard1.0 (.NETStandard,Version=v1.0)\r\n  - netstandard1.2 (.NETStandard,Version=v1.2)\r\n  - netstandard1.4 (.NETStandard,Version=v1.4)\r\n  - netstandard2.0 (.NETStandard,Version=v2.0)\r\n  - portable-net45+win+win81+wp8+wpa81 (.NETPortable,Version=v0.0,Profile=win+net45+wp80+win81+wpa81)\r\n  - uap10.0 (UAP,Version=v10.0)\r\n  - xamarinios10 (Xamarin.iOS,Version=v1.0)\r\n  - xamarinmac (Xamarin.Mac,Version=v0.0)",
+      "libraryId": "Syncfusion.Licensing",
+      "targetGraphs": [
+        ".NETFramework,Version=v5.0,Profile=windows"
+      ]
+    },
+    {
+      "code": "NU1202",
+      "level": "Error",
+      "message": "Пакет Syncfusion.Shared.WPF 19.3.0.45 несовместим с net50-windows (.NETFramework,Version=v5.0,Profile=windows). Пакет Syncfusion.Shared.WPF 19.3.0.45 поддерживает:\r\n  - net35 (.NETFramework,Version=v3.5)\r\n  - net40 (.NETFramework,Version=v4.0)\r\n  - net45 (.NETFramework,Version=v4.5)\r\n  - net451 (.NETFramework,Version=v4.5.1)\r\n  - net46 (.NETFramework,Version=v4.6)\r\n  - net50-windows7.0 (.NETFramework,Version=v5.0,Profile=windows7.0)\r\n  - netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
+      "libraryId": "Syncfusion.Shared.WPF",
+      "targetGraphs": [
+        ".NETFramework,Version=v5.0,Profile=windows"
+      ]
+    }
+  ]
+}

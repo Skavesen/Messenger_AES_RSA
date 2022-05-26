@@ -1,0 +1,122 @@
+﻿<Window x:Class="Client.ChatWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="Месседжер" Height="450" Width="800" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="\Resources\ChatIcon.ico">
+
+    <Grid Background="#FF7CD434">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" ></ColumnDefinition>
+            <ColumnDefinition Width="0.4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition  Height="0.2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Column="0" Grid.Row="0"  BorderBrush="Black"  BorderThickness="0 0 1 0" />
+        <Border Grid.Column="0" Grid.Row="1"  BorderBrush="Black"  BorderThickness="0 0 1 0" />
+
+        <TextBlock HorizontalAlignment="Right" Margin="0 0 20 0" FontSize="19" FontStyle="Italic" FontWeight="Bold" Foreground="#FF1856C3" 
+                   Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}" />
+        <Canvas Grid.Column="0" Grid.Row="0">
+            <TextBlock Canvas.Top="5" Canvas.Left="10" Text="Чат:" FontSize="15" />
+            <TextBox Canvas.Top="35" Canvas.Left="20" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" IsReadOnly="True" FontSize="13" Width="530" Height="310"
+                     Text="{Binding Chat, UpdateSourceTrigger=PropertyChanged}"/>
+        </Canvas>
+
+        <Canvas Grid.Column="0" Grid.Row="1">
+
+            <Grid Canvas.Top="17" Canvas.Left="20">
+                <TextBox Name="TB2" TextWrapping="Wrap" AcceptsReturn="True" Width="450" Height="38" FontSize="13"
+                         Text="{Binding Message, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBlock IsHitTestVisible="False" Text="Введите сообщение..." VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray" 
+                           FontSize="15">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Text, ElementName=TB2}" Value="">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
+
+            <Button Width="76" Height="38" Canvas.Top="17" Canvas.Left="476" Background="WhiteSmoke" 
+                    Command="{Binding SendCommand}"  >
+                <Image Source="\Resources\Send.png" Height="30" Width="40" />
+            </Button>
+
+        </Canvas>
+        <Canvas Grid.Column="1" Grid.Row="0" Background="#FFA4CDFF">
+            <ListBox Width="190" Height="320" Canvas.Top="35" Canvas.Left="20" AlternationCount="2" ItemsSource="{Binding Friends}"  
+                     SelectedItem="{Binding SelectedName, Mode=TwoWay}" >
+
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction 
+                            Command="{Binding DestinationCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="{Binding}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Style.Setters>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style.Setters>
+                        <Style.Triggers>
+                            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                <Setter Property="Background" Value="#FF87F7AB"/>
+                            </Trigger>
+                            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                <Setter Property="Background" Value="#FFA2B1F5"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+
+                <ListBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Сквозное шифрование" Command="{Binding SetKeyCommand}"></MenuItem>
+                        <MenuItem Header="Удалить" Command="{Binding DelCommand}"></MenuItem>
+                    </ContextMenu>
+                </ListBox.ContextMenu>
+
+            </ListBox>
+        </Canvas>
+
+        <TextBlock Grid.Column="1" Grid.Row="0" Text="Друзья:" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,5,0,0" FontSize="15"/>
+        <Canvas Grid.Column="1" Grid.Row="1"  Background="#FFA4CDFF">
+
+            <TextBlock HorizontalAlignment="Right" Margin="10 50 0 0" FontSize="11" FontStyle="Italic" FontWeight="Bold" Foreground="Black" 
+                   Text="{Binding Sum1, UpdateSourceTrigger=PropertyChanged}" ToolTip="Согласованность ключей" />
+            <TextBlock HorizontalAlignment="Right" Margin="35 50 0 0" FontSize="11" FontStyle="Italic" FontWeight="Bold" Foreground="Black" 
+                   Text="/" ToolTip="Согласованность ключей" />
+            <TextBlock HorizontalAlignment="Right" Margin="40 50 0 0" FontSize="11" FontStyle="Italic" FontWeight="Bold" Foreground="Black" 
+                   Text="{Binding Sum2, UpdateSourceTrigger=PropertyChanged}" ToolTip="Согласованность ключей" />
+            <CheckBox Content="Не беспокоить" Canvas.Top="25" Canvas.Left="20" IsChecked="{Binding Silencemode}" 
+                      Command="{Binding SilenceCommand}"/>
+            <Button Height="40" Width="40" Canvas.Left="168" Canvas.Top="13" Background="WhiteSmoke" 
+                    Command="{Binding FindCommand}" >
+                <Image Source="\Resources\Plus.png" Height="30" Width="40" />
+            </Button>
+        </Canvas>
+
+    </Grid>
+
+</Window>
